@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - APP_FOLDER=${APP_FOLDER}
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    volumes:
+      - .:${APP_FOLDER}
+    environment:
+      - APP_HOST
+      - APP_PORT
+      - APP_MODULE
+      - APP_FOLDER
+    restart: unless-stopped
