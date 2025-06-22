@@ -1,4 +1,4 @@
-.PHONY: up debug down
+.PHONY: run logs down debug 
 
 run:
 	@COMPOSE_BAKE=true docker compose up -d --build
@@ -8,6 +8,3 @@ logs:
 
 down:
 	@docker compose down
-
-debug:
-	@docker compose -f docker-compose.yaml -f docker-compose.debug.yaml up -d --build
