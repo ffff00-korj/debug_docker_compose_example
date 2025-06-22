@@ -16,5 +16,5 @@ if __name__ == "__main__":
         f"{config.app_module}:app",
         host=config.host,
         port=config.port,
-        reload=True,
+        reload=config.reload,
     )
