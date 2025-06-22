@@ -1,0 +1,8 @@
+services:
+  app:
+    command: >
+      sh -c "pip install debugpy &&
+      python -m debugpy --listen ${APP_HOST}:${DEBUG_PORT} --wait-for-client
+      -m app.main"
+    ports:
+      - "${DEBUG_PORT}:${DEBUG_PORT}"
